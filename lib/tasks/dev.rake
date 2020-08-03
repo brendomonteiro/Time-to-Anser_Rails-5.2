@@ -1,4 +1,8 @@
 namespace :dev do
+
+  Password_Usada = 123456
+
+
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
     if Rails.env.development?
@@ -17,8 +21,8 @@ namespace :dev do
   task add_default_admin: :environment do
     Admin.create!(
     email: 'admin@admin.com',
-    password: 123456,
-    password_confirmation: 123456
+    password: Password_Usada,
+    password_confirmation: Password_Usada
     )
   end
 
@@ -26,8 +30,8 @@ namespace :dev do
   task add_default_user: :environment do
     User.create!(
     email: 'user@user.com',
-    password: 123456,
-    password_confirmation: 123456
+    password: Password_Usada,
+    password_confirmation: Password_Usada
     )
   end
 
